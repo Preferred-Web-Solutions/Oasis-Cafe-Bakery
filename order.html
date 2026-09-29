@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order Online — The Oasis Cafe & Bakery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F7F0DC; --panel:#EFE2BE; --ink:#2B2015; --muted:#6E5E45;
+ --gold:#AD7B23; --teal:#1E4B4A; --line:#E1D2A6;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+html{scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.06rem/1.6 "Public Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;color:var(--teal);margin:0;line-height:1.1}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;max-width:1080px;margin:0 auto;padding-left:clamp(1.2rem,4vw,3rem);padding-right:clamp(1.2rem,4vw,3rem)}
+.navrow .brand{display:flex;align-items:center;gap:.7rem}
+.navrow img.logo{height:44px;width:44px;border-radius:8px;object-fit:cover}
+.navrow .brandname{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.2rem;color:var(--teal)}
+.navlinks{display:flex;gap:1.3rem;flex-wrap:wrap}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.93rem}
+.navlinks a.active{color:var(--gold)}
+.callbtn{background:var(--teal);color:#fff;font-weight:700;text-decoration:none;padding:.6rem 1.1rem;border-radius:7px;white-space:nowrap}
+@media (max-width:760px){
+.navrow{flex-wrap:wrap;row-gap:.6rem;justify-content:center;text-align:center}
+.callbtn{order:2;padding:.5rem .85rem;font-size:.82rem}
+.navlinks{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:1.2rem;-webkit-overflow-scrolling:touch}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{white-space:nowrap;font-size:.85rem;flex:0 0 auto}
+}
+
+.pagehead{padding:2.4rem 0 1.4rem;text-align:center}
+.pagehead h1{font-size:clamp(2rem,5vw,2.8rem);font-weight:600}
+.pagehead p{color:var(--muted);max-width:52ch;margin:.7rem auto 0}
+.pagehead a.backlink{display:inline-block;margin-top:.9rem;font-weight:600;font-size:.9rem}
+
+.catnav{display:flex;gap:.5rem;justify-content:center;margin:1.3rem 0 0;flex-wrap:wrap}
+.catnav a{font:600 .85rem "Public Sans",sans-serif;background:var(--panel);border:1px solid var(--line);color:var(--teal);padding:.45rem 1rem;border-radius:999px;text-decoration:none}
+.catnav a:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+.orderlayout{display:grid;grid-template-columns:1.5fr 1fr;gap:2.2rem;align-items:start;margin-top:2rem}
+@media (max-width:900px){.orderlayout{grid-template-columns:1fr}}
+
+.catblock{margin-bottom:2.2rem;scroll-margin-top:170px}
+.catblock h3{font-size:1.4rem;font-weight:600;border-bottom:2px solid var(--line);padding-bottom:.4rem;margin-bottom:.3rem}
+.menuline{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.menuline:last-child{border-bottom:none}
+.ml-body{flex:1;min-width:0}
+.ml-body h4{font-size:1.02rem;font-weight:600;color:var(--ink)}
+.ml-body p{margin:.2rem 0 0;color:var(--muted);font-size:.88rem}
+.ml-side{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;flex:0 0 auto}
+.ml-price{font-weight:700;color:var(--teal);white-space:nowrap}
+.oi-add{font:700 .82rem "Public Sans",sans-serif;background:var(--gold);color:#fff;border:none;padding:.4rem .9rem;border-radius:6px;cursor:pointer;white-space:nowrap}
+.oi-add:active{opacity:.8}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem;position:sticky;top:90px}
+.card h3{font-size:1.2rem;margin-bottom:.9rem}
+.cartline{display:flex;justify-content:space-between;font-size:.92rem;padding:.4rem 0;border-bottom:1px solid var(--line)}
+.cartline button{background:none;border:none;color:var(--gold);font-size:1.1rem;cursor:pointer;margin-left:.6rem}
+.carttotal{display:flex;justify-content:space-between;font-weight:700;padding:.8rem 0;border-top:2px solid var(--line);margin-top:.4rem}
+.card label{display:block;font-size:.85rem;font-weight:600;margin:.9rem 0 .25rem}
+.card input,.card textarea,.card select{width:100%;font:inherit;padding:.65rem;border:2px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink)}
+.submitbtn{width:100%;margin-top:1.1rem;background:var(--teal);color:#fff;font-weight:700;border:none;padding:.85rem;border-radius:8px;cursor:pointer;font-size:1rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+
+footer{padding:2.2rem 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);text-align:center}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="navrow">
+    <div class="brand"><img class="logo" src="logo.jpg" alt="The Oasis Cafe & Bakery logo"><span class="brandname">The Oasis Cafe &amp; Bakery</span></div>
+    <nav class="navlinks">
+      <a href="order.html" class="active">Order online</a>
+      <a href="index.html#story">Our story</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#visit">Visit</a>
+      <a href="index.html#reserve">Reserve</a>
+    </nav>
+    <a class="callbtn" href="tel:5136301010">Call (513) 630-1010</a>
+  </div>
+</header>
+
+<section class="wrap pagehead">
+  <h1>Order online for pickup</h1>
+  <p>Our full menu — add what you'd like, pick a pickup time, and we'll have it ready at the counter.</p>
+  <a class="backlink" href="index.html">&#8592; Back to the main site</a>
+  <div class="catnav">
+    <a href="#cat-breakfast">Breakfast</a><a href="#cat-bakery">Bakery</a><a href="#cat-beverages">Beverages</a>
+    <a href="#cat-salads">Salads</a><a href="#cat-soups">Soups</a><a href="#cat-mains">Main Course</a><a href="#cat-desserts">Desserts</a>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="orderlayout">
+    <div id="menuCols"></div>
+
+    <div class="card" id="cartCard">
+      <h3>Your pickup order</h3>
+      <div id="cartLines"><p class="note" id="cartEmpty">Nothing added yet.</p></div>
+      <div class="carttotal" id="cartTotal" hidden><span>Total</span><span id="cartTotalAmt">$0.00</span></div>
+      <label for="opn">Name</label><input id="opn">
+      <label for="opp">Phone</label><input id="opp" type="tel">
+      <label for="opt">Pickup time</label>
+      <select id="opt">
+        <option>As soon as possible</option>
+        <option>In 30 minutes</option>
+        <option>In 1 hour</option>
+        <option>Choose a time when I arrive</option>
+      </select>
+      <label for="opnote">Notes (optional)</label><textarea id="opnote" rows="2" placeholder="Allergies, spice preference, etc."></textarea>
+      <button class="submitbtn" id="ob">Place pickup order</button>
+      <p class="note" id="om"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  Website preview by Preferred Web Solutions for The Oasis Cafe &amp; Bakery. Online ordering above is a working demo for review — it'll connect to a real payment system once approved. Menu items and prices are pulled from the menu on file; update anytime.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+// ---- Menu data (from the uploaded printed menu, pages 1–3) ----
+const MENU=[
+ {id:"breakfast",cat:"Breakfast",items:[
+  {n:"Atala",d:"Traditional warm Uzbek grain porridge, comforting and lightly savory.",p:5},
+  {n:"Belyashi",d:"Golden fried pastry filled with seasoned meat and onions.",p:3},
+  {n:"Qaymoq",d:"Fresh clotted cream served with warm bread or tea.",p:6},
+  {n:"Sumalak",d:"Traditional sweet wheat germ pudding, slow-cooked for deep flavor.",p:15}
+ ]},
+ {id:"bakery",cat:"Bakery",items:[
+  {n:"1/2 Non",d:"Fresh traditional Uzbek bread with a soft center and crisp crust.",p:2},
+  {n:"Chapchak Non",d:"Layered flaky bread with a rich buttery texture.",p:3},
+  {n:"Hachapuri",d:"Georgian-style cheese-filled bread baked until golden.",p:4},
+  {n:"Sambusa",d:"Tandoor-baked pastry filled with seasoned meat and onions.",p:4},
+  {n:"Sambusa w/ Greens",d:"Savory pastry stuffed with fresh herbs and greens.",p:3},
+  {n:"Sambusa w/ Pumpkin",d:"Sweet and savory pumpkin-filled pastry.",p:3}
+ ]},
+ {id:"beverages",cat:"Beverages",items:[
+  {n:"Apple / Orange / Pineapple Juice",d:"Refreshing chilled fruit juice.",p:3},
+  {n:"Ayran / Chalob",d:"Traditional cold yogurt-based drink.",p:6},
+  {n:"Bottle Water",d:"Bottled drinking water.",p:2},
+  {n:"Choy",d:"Choice of green or black tea. Add lemon +$2.",p:3},
+  {n:"Coffee",d:"Fresh brewed coffee.",p:3},
+  {n:"Kefir",d:"Smooth fermented milk drink with a light tangy flavor.",p:4},
+  {n:"Kids Juice",d:"Fruit juice for kids.",p:2},
+  {n:"Kompot",d:"Homemade fruit drink.",p:3},
+  {n:"Kompot Pitcher",d:"Large pitcher of homemade kompot for sharing.",p:10},
+  {n:"Mojito (non-alcoholic)",d:"Refreshing mint and lime drink.",p:4},
+  {n:"Soda Bottle",d:"Assorted bottled soda.",p:3},
+  {n:"Soda Can",d:"Assorted canned soda.",p:2},
+  {n:"Sparkling Water",d:"Refreshing sparkling water.",p:3},
+  {n:"Sparkling Water Large",d:"Large bottle of sparkling water.",p:6}
+ ]},
+ {id:"salads",cat:"Salads",items:[
+  {n:"Achichuk",d:"Fresh tomato and onion salad with herbs.",p:3},
+  {n:"Achichuk Large",d:"Large portion of Achichuk salad.",p:6},
+  {n:"Kapusta So Sveklom",d:"Marinated cabbage and beet salad.",p:6},
+  {n:"Kimchi",d:"Spicy fermented cabbage.",p:6},
+  {n:"Mix Salad",d:"Fresh mixed vegetable salad.",p:6},
+  {n:"Morkovcha",d:"Korean-style marinated carrot salad with garlic and spices.",p:6},
+  {n:"Morkovcha Large",d:"Large portion of Morkovcha.",p:10},
+  {n:"Ogurci Malosolniye",d:"Lightly pickled cucumbers with herbs.",p:6},
+  {n:"Pomidori Malosolniye",d:"Lightly pickled tomatoes with garlic and herbs.",p:6},
+  {n:"Stuffed Eggplant",d:"Eggplant filled with a savory vegetable mixture.",p:6},
+  {n:"Stuffed Tomato",d:"Tomato filled with seasoned vegetable stuffing.",p:4},
+  {n:"Svezhiy",d:"Fresh cucumber and tomato salad.",p:3},
+  {n:"Svezhiy Large",d:"Large fresh cucumber and tomato salad.",p:6}
+ ]},
+ {id:"soups",cat:"Soups",items:[
+  {n:"Kharcho",d:"Rich Georgian-style beef soup with rice, herbs, and spices.",p:10},
+  {n:"Lagman",d:"Hearty Central Asian noodle soup with vegetables and tender meat.",p:12},
+  {n:"Shurpa",d:"Traditional lamb soup with potatoes, carrots, and herbs.",p:10}
+ ]},
+ {id:"mains",cat:"Main Course",items:[
+  {n:"Beef Stroganoff",d:"Tender beef strips in creamy mushroom sauce. Choice of garnir: grechka, rice, or mashed potatoes.",p:15},
+  {n:"Lamb Shank",d:"Slow-braised lamb shank cooked until tender and flavorful.",p:22},
+  {n:"Tefteli",d:"Homemade meatballs in a rich savory sauce. Choice of garnir: grechka, rice, or mashed potatoes.",p:15},
+  {n:"Manti",d:"Steamed dumplings filled with seasoned meat and onions.",p:12},
+  {n:"Plov",d:"Traditional Uzbek rice pilaf with carrots, spices, and tender meat.",p:15},
+  {n:"Shashliki",d:"Grilled skewers cooked over open flame. Choices: Beef +$2, Chicken, Lamb +$2, Lamb Chops +$6, Lamb Ribs +$4, Molotiy, Liver +$2, Salmon +$4, Vegetables.",p:8},
+  {n:"Shawarma",d:"Fresh wrap with vegetables, sauce, and your choice of filling. Choices: Beef +$2, Lamb +$5, Chicken +$3, Molotiy +$3, Veggies.",p:8},
+  {n:"Tuy Kabob",d:"Samarkand-style slow-cooked lamb and tomato stew, traditionally made for weddings and celebrations.",p:15}
+ ]},
+ {id:"desserts",cat:"Desserts",items:[
+  {n:"Eclair",d:"Classic cream-filled pastry topped with chocolate glaze.",p:5},
+  {n:"Eclair w/ Raspberry",d:"Éclair with sweet raspberry filling.",p:3},
+  {n:"Honey Cake",d:"Layered honey cake with smooth cream filling.",p:6},
+  {n:"Napoleon",d:"Flaky pastry layers with rich custard cream.",p:6},
+  {n:"Raspberry Shortcake",d:"Soft cake layered with raspberry cream.",p:6},
+  {n:"San Sebastian",d:"Creamy caramelized Basque-style cheesecake.",p:8},
+  {n:"Spartak",d:"Chocolate honey layer cake with cream filling.",p:6},
+  {n:"Truffle Cake",d:"Rich chocolate cake with truffle cream.",p:6}
+ ]}
+];
+
+$("menuCols").innerHTML=MENU.map(block=>`
+ <div class="catblock" id="cat-${block.id}">
+  <h3>${block.cat}</h3>
+  ${block.items.map(it=>`
+   <div class="menuline">
+    <div class="ml-body"><h4>${it.n}</h4><p>${it.d}</p></div>
+    <div class="ml-side">
+     <div class="ml-price">$${it.p.toFixed(2)}</div>
+     <button class="oi-add" data-item="${it.n.replace(/"/g,'&quot;')}" data-price="${it.p}">Add</button>
+    </div>
+   </div>`).join("")}
+ </div>`).join("");
+
+// ---- Cart ----
+const cart=[];
+function renderCart(){
+ const lines=$("cartLines");
+ if(!cart.length){lines.innerHTML='<p class="note" id="cartEmpty">Nothing added yet.</p>';$("cartTotal").hidden=true;return}
+ lines.innerHTML=cart.map((it,i)=>`<div class="cartline"><span>${it.name}</span><span>$${it.price.toFixed(2)}<button data-i="${i}" aria-label="Remove ${it.name}">&times;</button></span></div>`).join("");
+ const total=cart.reduce((s,it)=>s+it.price,0);
+ $("cartTotal").hidden=false;
+ $("cartTotalAmt").textContent="$"+total.toFixed(2);
+ lines.querySelectorAll("button[data-i]").forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.i,1);renderCart()});
+}
+document.addEventListener("click",e=>{
+ const b=e.target.closest(".oi-add");
+ if(!b)return;
+ cart.push({name:b.dataset.item,price:parseFloat(b.dataset.price)});
+ renderCart();
+ b.textContent="Added";setTimeout(()=>{b.textContent="Add"},900);
+});
+$("ob").onclick=()=>{
+ if(!cart.length){$("om").textContent="Add at least one item first.";return}
+ if(!$("opn").value.trim()||!$("opp").value.trim()){$("om").textContent="Please add a name and phone number.";return}
+ $("om").textContent="Thanks — this is a preview, so nothing was sent or charged yet. Online ordering connects to a real payment system once approved.";
+};
+</script>
+</body>
+</html>

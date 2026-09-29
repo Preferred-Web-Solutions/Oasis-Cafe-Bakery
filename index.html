@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Oasis Cafe & Bakery — Loveland, OH</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F7F0DC; --panel:#EFE2BE; --ink:#2B2015; --muted:#6E5E45;
+ --gold:#AD7B23; --teal:#1E4B4A; --line:#E1D2A6;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+html{scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.06rem/1.62 "Public Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--teal);margin:0;line-height:1.1}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;max-width:1080px;margin:0 auto;padding-left:clamp(1.2rem,4vw,3rem);padding-right:clamp(1.2rem,4vw,3rem)}
+.navrow .brand{display:flex;align-items:center;gap:.7rem}
+.navrow img.logo{height:48px;width:48px;border-radius:8px;object-fit:cover}
+.navrow .brandname{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.3rem;color:var(--teal)}
+.navlinks{display:flex;gap:1.3rem;flex-wrap:wrap}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.93rem}
+.navlinks a:hover{color:var(--gold)}
+.callbtn{background:var(--teal);color:#fff;font-weight:700;text-decoration:none;padding:.6rem 1.1rem;border-radius:7px;white-space:nowrap}
+@media (max-width:820px){
+.navrow{flex-wrap:wrap;row-gap:.6rem;justify-content:center;text-align:center}
+.callbtn{order:2;padding:.5rem .85rem;font-size:.82rem}
+.navlinks{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:1.2rem;padding-bottom:.15rem;-webkit-overflow-scrolling:touch}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{white-space:nowrap;font-size:.85rem;flex:0 0 auto}
+}
+
+.hero{padding:3.2rem 0 2.4rem;display:grid;grid-template-columns:1.1fr 1fr;gap:2.4rem;align-items:center}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.hero>div:first-child{padding-left:.6rem}}
+.hero .est{color:var(--gold);font-weight:700;letter-spacing:.03em;margin-bottom:.6rem;display:block;text-transform:uppercase;font-size:.85rem}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.6rem);font-weight:600;max-width:14ch}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.12rem;margin:1.1rem 0 1.5rem}
+.ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:8px}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.outline{border:2px solid var(--teal);color:var(--teal)}
+.hero-photos{display:grid;grid-template-columns:1.2fr .8fr;gap:.7rem}
+.hero-photos img{border-radius:12px;object-fit:cover;width:100%;height:100%}
+.hero-photos .tall{grid-row:span 2;aspect-ratio:3/4}
+.hero-photos .wide{aspect-ratio:4/3}
+
+section{padding:3.4rem 0}
+.panel{background:var(--panel)}
+h2{font-size:clamp(1.85rem,4.3vw,2.5rem);font-weight:600;margin-bottom:.4rem}
+.section-lede{color:var(--muted);max-width:56ch;margin-bottom:2rem}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.5rem}
+.feature{background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.feature img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.feature .fb{padding:1.1rem 1.2rem}
+.feature h3{font-size:1.2rem;font-weight:600}
+.feature p{color:var(--muted);margin:.4rem 0 0;font-size:.94rem}
+
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:2.6rem;align-items:center}
+@media (max-width:820px){.story{grid-template-columns:1fr}}
+.story p{margin:0 0 1rem;color:var(--ink)}
+.story img{border-radius:14px;aspect-ratio:4/3;object-fit:cover}
+
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.2rem;margin-bottom:1.6rem}
+.menu-grid a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.menu-grid img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.menu-cap{padding:.65rem 1rem;font-weight:600;font-size:.88rem;color:var(--teal)}
+.orderbanner{background:var(--teal);border-radius:16px;padding:1.8rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;color:#fff}
+.orderbanner h3{color:#fff;font-size:1.4rem}
+.orderbanner p{color:#DCE6E5;margin:.3rem 0 0}
+.orderbanner .btn{background:#fff;color:var(--teal)}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem}
+.gallery img{border-radius:10px;aspect-ratio:1;object-fit:cover}
+
+.visitgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:2rem}
+.visitgrid h3{font-size:1.1rem;color:var(--teal);margin-bottom:.5rem}
+.visitgrid p{color:var(--muted);margin:0}
+.visitgrid a{color:var(--gold);font-weight:600}
+
+.inquiry{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:2rem}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.card h3{font-size:1.2rem;margin-bottom:.3rem}
+.card p{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
+label{display:block;font-weight:600;font-size:.9rem;margin-top:.8rem}
+input,textarea{width:100%;font:inherit;padding:.65rem;margin-top:.3rem;border:2px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink)}
+.submitbtn{margin-top:1.1rem;background:var(--teal);color:#fff;border:0;border-radius:8px;padding:.8rem 1.4rem;font-weight:700;cursor:pointer}
+.note{margin-top:.7rem;font-weight:600;font-size:.9rem;color:var(--gold)}
+
+footer{padding:2.2rem 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="navrow">
+    <div class="brand"><img class="logo" src="logo.jpg" alt="The Oasis Cafe & Bakery logo"><span class="brandname">The Oasis Cafe &amp; Bakery</span></div>
+    <nav class="navlinks">
+      <a href="order.html">Order online</a>
+      <a href="#story">Our story</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+      <a href="#reserve">Reserve</a>
+    </nav>
+    <a class="callbtn" href="tel:5136301010">Call (513) 630-1010</a>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <div>
+    <span class="est">Uzbek &amp; Central Asian cuisine · Loveland, Ohio</span>
+    <h1>The tastes of Uzbekistan, made with care in Loveland.</h1>
+    <p>Authentic plov, shurpa, and manti alongside Tajik favorites and Eastern European comfort food — flavorful halal meals in a warm space for breakfast, lunch, or dinner.</p>
+    <div class="ctas">
+      <a class="btn primary" href="order.html">Order online for pickup</a>
+      <a class="btn outline" href="#menu">See the menu</a>
+    </div>
+  </div>
+  <div class="hero-photos">
+    <img class="tall" src="interior.jpg" alt="Inside The Oasis Cafe & Bakery">
+    <img class="wide" src="food-1.webp" alt="A dish from The Oasis Cafe & Bakery">
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>A taste of what's cooking</h2>
+  <p class="section-lede">From hearty mains to fresh-baked non, made in-house every day.</p>
+  <div class="features">
+    <div class="feature">
+      <img src="food-1.webp" alt="Signature dish">
+      <div class="fb"><h3>Made from scratch</h3><p>Traditional recipes, cooked the way they've always been made.</p></div>
+    </div>
+    <div class="feature">
+      <img src="food-2.webp" alt="Fresh bakery items">
+      <div class="fb"><h3>Fresh-baked daily</h3><p>Non, chapchak, and sambusa baked in-house every morning.</p></div>
+    </div>
+    <div class="feature">
+      <img src="food-3.webp" alt="A warm dining experience">
+      <div class="fb"><h3>A warm gathering place</h3><p>A cozy, upscale space for families and friends to share a meal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap panel" id="story" style="border-radius:20px">
+  <div class="story">
+    <div>
+      <h2>Our story</h2>
+      <p>OASIS CAFE AND BAKERY brings the rich tastes of Uzbekistan and beyond to Loveland. Our menu celebrates authentic Uzbek classics like plov and shurpa alongside Tajik dishes and Eastern European comfort foods.</p>
+      <p>We use quality ingredients to create flavorful halal meals in a welcoming space where families and friends can gather for breakfast, lunch, or dinner.</p>
+    </div>
+    <img src="interior.jpg" alt="Inside The Oasis Cafe & Bakery">
+  </div>
+</section>
+
+<section class="wrap" id="menu">
+  <h2>Menu</h2>
+  <p class="section-lede">Our full menu — tap a page to view it full size, or order online below.</p>
+  <div class="menu-grid">
+    <a href="menu-1.jpg" target="_blank" rel="noopener"><img src="menu-1.jpg" alt="Breakfast and bakery menu"><div class="menu-cap">Breakfast &amp; Bakery</div></a>
+    <a href="menu-2.jpg" target="_blank" rel="noopener"><img src="menu-2.jpg" alt="Salads and soups menu"><div class="menu-cap">Salads &amp; Soups</div></a>
+    <a href="menu-3.jpg" target="_blank" rel="noopener"><img src="menu-3.jpg" alt="Main course and desserts menu"><div class="menu-cap">Mains &amp; Desserts</div></a>
+  </div>
+  <div class="orderbanner">
+    <div><h3>Ready to order?</h3><p>Build a pickup order from our full menu, with real prices and descriptions.</p></div>
+    <a class="btn" href="order.html">Order online &#8594;</a>
+  </div>
+</section>
+
+<section class="wrap panel" style="border-radius:20px">
+  <h2>Around the cafe</h2>
+  <p class="section-lede">A look inside The Oasis Cafe &amp; Bakery.</p>
+  <div class="gallery">
+    <img src="interior.jpg" alt="Dining room at The Oasis Cafe & Bakery">
+    <img src="food-1.webp" alt="A dish from The Oasis Cafe & Bakery">
+    <img src="food-2.webp" alt="A dessert from The Oasis Cafe & Bakery">
+    <img src="food-3.webp" alt="Dining at The Oasis Cafe & Bakery">
+  </div>
+</section>
+
+<section class="wrap" id="visit">
+  <h2>Visit us</h2>
+  <div class="visitgrid">
+    <div><h3>Address</h3><p>9187 Lighthouse Way<br>Loveland, OH 45140</p>
+     <p style="margin-top:.6rem"><a href="https://www.google.com/maps/search/?api=1&query=9187+Lighthouse+Way+Loveland+OH+45140" target="_blank" rel="noopener">Get directions &#8594;</a></p></div>
+    <div><h3>Hours</h3><p>Mon, Tue, Thu–Sun: 9 AM – 9 PM<br>Wednesday: Closed</p></div>
+    <div><h3>Contact</h3><p><a href="tel:5136301010">(513) 630-1010</a><br><a href="mailto:oasiscafeloveland@gmail.com">oasiscafeloveland@gmail.com</a></p></div>
+    <div><h3>Find us online</h3><p><a href="https://oasiscafeloveland.com" target="_blank" rel="noopener">oasiscafeloveland.com</a><br><a href="https://www.instagram.com/oasiscafe_cincinnati/" target="_blank" rel="noopener">Instagram</a></p></div>
+    <div><h3>Reviews</h3><p><a href="https://www.google.com/search?q=oasis+cafe+and+bakery" target="_blank" rel="noopener">Google Reviews</a></p></div>
+  </div>
+</section>
+
+<section class="wrap panel" id="reserve" style="border-radius:20px">
+  <h2>Reserve a table &amp; stay in the loop</h2>
+  <p class="section-lede">Send a request and our team will follow up to confirm — or join our email list for specials and updates.</p>
+  <div class="inquiry">
+    <div class="card">
+      <h3>Reserve a table</h3>
+      <p>For parties of any size — we'll call to confirm.</p>
+      <label for="rn">Name</label><input id="rn">
+      <label for="rd">Date &amp; time</label><input id="rd" type="text" placeholder="e.g. Sat 10/4, 6:30 PM">
+      <label for="rp">Party size</label><input id="rp" type="text">
+      <button class="submitbtn" id="rb">Request reservation</button>
+      <p class="note" id="rm"></p>
+    </div>
+    <div class="card">
+      <h3>Join our email list</h3>
+      <p>Specials, new menu items, and cafe news — no spam.</p>
+      <label for="en">Name</label><input id="en">
+      <label for="ee">Email</label><input id="ee" type="email">
+      <button class="submitbtn" id="eb">Sign up</button>
+      <p class="note" id="em"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  Website preview by Preferred Web Solutions for The Oasis Cafe &amp; Bakery. Reservation and email sign-up forms above are working demos for review — they'll connect to email once approved. Menu shown is the menu on file; update anytime with new photos.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+$("rb").onclick=()=>{$("rm").textContent=$("rn").value.trim()&&$("rd").value.trim()?"Thanks — this is a preview, so nothing was sent yet.":"Please add a name and a date.";};
+$("eb").onclick=()=>{$("em").textContent=$("ee").value.trim()?"Thanks — this is a preview, so nothing was sent yet.":"Please add an email address.";};
+</script>
+</body>
+</html>
